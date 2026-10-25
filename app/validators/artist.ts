@@ -13,7 +13,8 @@ export const createArtist = vine.create({
       extnames: ['jpg', 'jpeg', 'png', 'webp'],
       size: '8G',
     })
-    .nullable(),
+    .nullable()
+    .optional(),
   name: vine.string().maxLength(255),
   short_biography: vine.string(),
   started_at: vine.date(),
@@ -30,13 +31,15 @@ export const updateArtist = vine.create({
       extnames: ['jpeg', 'jpg', 'png', 'webp'],
       size: '8G',
     })
-    .nullable(),
+    .nullable()
+    .optional(),
   logo: vine
     .file({
       extnames: ['jpg', 'jpeg', 'png', 'webp'],
       size: '8G',
     })
-    .nullable(),
+    .nullable()
+    .optional(),
   name: vine.string().maxLength(255),
   short_biography: vine.string(),
   started_at: vine.date(),

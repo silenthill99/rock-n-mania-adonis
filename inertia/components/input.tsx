@@ -5,7 +5,13 @@ type Props = {
 } & ComponentProps<'input'>
 
 const Input = ({ className, ...props }: Props) => {
-  return <input className={`input text-black ${className}`} {...props} />
+  const base = props.type === 'file' ? 'file-input' : 'input'
+
+  if (props.type === 'checkbox') {
+    throw new Error('Unavailable type')
+  }
+
+  return <input className={`text-black ${base} ${className}`} {...props} />
 }
 
 export default Input
