@@ -21,6 +21,8 @@ export type ScannedRoutes = {
     'albums.store': { paramsTuple?: []; params?: {} }
     'artists.create': { paramsTuple?: []; params?: {} }
     'artists.store': { paramsTuple?: []; params?: {} }
+    'artists.edit': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
+    'artists.update': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
   }
   GET: {
     'home': { paramsTuple?: []; params?: {} }
@@ -32,6 +34,7 @@ export type ScannedRoutes = {
     'clips.edit': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
     'albums.create': { paramsTuple?: []; params?: {} }
     'artists.create': { paramsTuple?: []; params?: {} }
+    'artists.edit': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
   }
   HEAD: {
     'home': { paramsTuple?: []; params?: {} }
@@ -43,6 +46,7 @@ export type ScannedRoutes = {
     'clips.edit': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
     'albums.create': { paramsTuple?: []; params?: {} }
     'artists.create': { paramsTuple?: []; params?: {} }
+    'artists.edit': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
   }
   POST: {
     'new_account.store': { paramsTuple?: []; params?: {} }
@@ -54,6 +58,7 @@ export type ScannedRoutes = {
   }
   PUT: {
     'clips.update': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
+    'artists.update': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
   }
   DELETE: {
     'clips.delete': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }

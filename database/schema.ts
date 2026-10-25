@@ -17,7 +17,18 @@ export class AlbumArtistSchema extends BaseModel {
 }
 
 export class AlbumSchema extends BaseModel {
-  static $columns = ['createdAt', 'deezerUrl', 'id', 'imagePath', 'name', 'releasedAt', 'slug', 'trackList', 'updatedAt', 'userId'] as const
+  static $columns = [
+    'createdAt',
+    'deezerUrl',
+    'id',
+    'imagePath',
+    'name',
+    'releasedAt',
+    'slug',
+    'trackList',
+    'updatedAt',
+    'userId',
+  ] as const
   $columns = AlbumSchema.$columns
   @column.dateTime({ autoCreate: true })
   declare createdAt: DateTime | null

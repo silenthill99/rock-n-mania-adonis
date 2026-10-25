@@ -211,4 +211,28 @@ export interface Registry {
       errorResponse: ExtractErrorResponse<Awaited<ReturnType<import('#controllers/artists_controller').default['store']>>> | { status: 422; response: { errors: SimpleError[] } }
     }
   }
+  'artists.edit': {
+    methods: ["GET","HEAD"]
+    pattern: '/artist/:id/edit'
+    types: {
+      body: {}
+      paramsTuple: [ParamValue]
+      params: { id: ParamValue }
+      query: {}
+      response: ExtractResponse<Awaited<ReturnType<import('#controllers/artists_controller').default['edit']>>>
+      errorResponse: ExtractErrorResponse<Awaited<ReturnType<import('#controllers/artists_controller').default['edit']>>>
+    }
+  }
+  'artists.update': {
+    methods: ["PUT"]
+    pattern: '/artist/:id'
+    types: {
+      body: ExtractBody<InferInput<(typeof import('#validators/artist').updateArtist)>>
+      paramsTuple: [ParamValue]
+      params: { id: ParamValue }
+      query: ExtractQuery<InferInput<(typeof import('#validators/artist').updateArtist)>>
+      response: ExtractResponse<Awaited<ReturnType<import('#controllers/artists_controller').default['update']>>>
+      errorResponse: ExtractErrorResponse<Awaited<ReturnType<import('#controllers/artists_controller').default['update']>>> | { status: 422; response: { errors: SimpleError[] } }
+    }
+  }
 }

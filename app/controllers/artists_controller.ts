@@ -2,7 +2,7 @@ import type { HttpContext } from '@adonisjs/core/http'
 
 import Artist from '#models/artist'
 import ArtistTransformer from '#transformers/artist_transformer'
-import { createArtist } from '#validators/artist'
+import { createArtist, updateArtist } from '#validators/artist'
 import string from '@adonisjs/core/helpers/string'
 import { randomUUID } from 'node:crypto'
 import app from '@adonisjs/core/services/app'
@@ -11,7 +11,7 @@ export default class ArtistsController {
   async create({ inertia }: HttpContext) {
     const artist = new Artist()
     return inertia.render('artists/forms', {
-      artists: ArtistTransformer.transform(artist),
+      artist: ArtistTransformer.transform(artist),
     })
   }
 
@@ -57,6 +57,20 @@ export default class ArtistsController {
       websiteUrl,
     })
 
+    return response.redirect().toRoute('home')
+  }
+
+  async edit({ params, inertia }: HttpContext) {
+    const artist = await Artist.findOrFail(params.id)
+    return inertia.render('artists/forms', {
+      artist: ArtistTransformer.transform(artist),
+    })
+  }
+
+  async update({ params, response, request }: HttpContext) {
+    const artist = await Artist.findOrFail(params.id)
+    const data = await request.validateUsing(updateArtist)
+    artist.merge(data)
     return response.redirect().toRoute('home')
   }
 }

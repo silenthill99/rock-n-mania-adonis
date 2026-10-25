@@ -52,4 +52,6 @@ router.group(() => {
 router.group(() => {
   router.get('/artists/create', [controllers.Artists, 'create'])
   router.post('/artists', [controllers.Artists, 'store'])
+  router.get('/artist/:id/edit', [controllers.Artists, 'edit'])
+  router.put('/artist/:id', [controllers.Artists, 'update'])
 })

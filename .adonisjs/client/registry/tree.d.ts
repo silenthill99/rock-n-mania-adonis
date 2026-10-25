@@ -28,5 +28,7 @@ export interface ApiDefinition {
   artists: {
     create: typeof routes['artists.create']
     store: typeof routes['artists.store']
+    edit: typeof routes['artists.edit']
+    update: typeof routes['artists.update']
   }
 }
