@@ -27,3 +27,4 @@ yarn-error.log
 
 # Project exclude paths
 /tmp/
+/public/images

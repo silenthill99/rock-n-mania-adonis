@@ -3,7 +3,7 @@ import vine from '@vinejs/vine'
 export const createArtist = vine.create({
   city: vine.string().maxLength(255),
   country: vine.string().maxLength(255),
-  ended_at: vine.date().nullable(),
+  ended_at: vine.date().afterOrSameAs('started_at').nullable(),
   image: vine.file({
     extnames: ['jpeg', 'jpg', 'png', 'webp'],
     size: '8gb',
@@ -25,7 +25,7 @@ export const createArtist = vine.create({
 export const updateArtist = vine.create({
   city: vine.string().maxLength(255),
   country: vine.string().maxLength(255),
-  ended_at: vine.date().nullable(),
+  ended_at: vine.date().afterOrSameAs('started_at').nullable(),
   image: vine
     .file({
       extnames: ['jpeg', 'jpg', 'png', 'webp'],
