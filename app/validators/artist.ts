@@ -6,12 +6,12 @@ export const createArtist = vine.create({
   ended_at: vine.date().nullable(),
   image: vine.file({
     extnames: ['jpeg', 'jpg', 'png', 'webp'],
-    size: '8G',
+    size: '8gb',
   }),
   logo: vine
     .file({
       extnames: ['jpg', 'jpeg', 'png', 'webp'],
-      size: '8G',
+      size: '8gb',
     })
     .nullable()
     .optional(),
@@ -29,14 +29,14 @@ export const updateArtist = vine.create({
   image: vine
     .file({
       extnames: ['jpeg', 'jpg', 'png', 'webp'],
-      size: '8G',
+      size: '8gb',
     })
     .nullable()
     .optional(),
   logo: vine
     .file({
       extnames: ['jpg', 'jpeg', 'png', 'webp'],
-      size: '8G',
+      size: '8gb',
     })
     .nullable()
     .optional(),

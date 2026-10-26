@@ -9,6 +9,13 @@ import Artist from '#models/artist'
 import ArtistTransformer from '#transformers/artist_transformer'
 
 export default class AlbumsController {
+  async index({ inertia }: HttpContext) {
+    const albums = await Album.all()
+    return inertia.render('albums/index', {
+      albums: AlbumTransformer.transform(albums),
+    })
+  }
+
   async create({ inertia }: HttpContext) {
     const album = new Album()
     const artists = await Artist.all()

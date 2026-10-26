@@ -44,9 +44,15 @@ router
   })
   .use(middleware.auth())
 
+router
+  .group(() => {
+    router.get('/albums/create', [controllers.Albums, 'create'])
+    router.post('/albums', [controllers.Albums, 'store'])
+  })
+  .use(middleware.auth())
+
 router.group(() => {
-  router.get('/albums/create', [controllers.Albums, 'create'])
-  router.post('/albums', [controllers.Albums, 'store'])
+  router.get('/albums', [controllers.Albums, 'index'])
 })
 
 router.group(() => {

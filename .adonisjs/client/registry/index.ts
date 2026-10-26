@@ -96,6 +96,12 @@ const routes = {
     tokens: [{"old":"/albums","type":0,"val":"albums","end":""}],
     types: placeholder as Registry['albums.store']['types'],
   },
+  'albums.index': {
+    methods: ["GET","HEAD"],
+    pattern: '/albums',
+    tokens: [{"old":"/albums","type":0,"val":"albums","end":""}],
+    types: placeholder as Registry['albums.index']['types'],
+  },
   'artists.create': {
     methods: ["GET","HEAD"],
     pattern: '/artists/create',

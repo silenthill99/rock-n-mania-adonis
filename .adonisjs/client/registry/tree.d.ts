@@ -24,6 +24,7 @@ export interface ApiDefinition {
   albums: {
     create: typeof routes['albums.create']
     store: typeof routes['albums.store']
+    index: typeof routes['albums.index']
   }
   artists: {
     create: typeof routes['artists.create']

@@ -10,6 +10,7 @@ import { Link } from '@adonisjs/inertia/react'
  */
 const nav: NavItem[] = [
   { label: 'Accueil', route: 'home' },
+  { label: 'Albums', route: 'albums.index'},
   { label: 'Quelques clips', route: 'clips.index' },
 ]
 

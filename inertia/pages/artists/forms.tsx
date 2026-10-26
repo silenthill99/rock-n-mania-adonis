@@ -5,7 +5,6 @@ import { usePage } from '@inertiajs/react'
 import type Artist from '#models/artist'
 import Input from '~/components/input'
 import FileInput from '~/components/file-input'
-import error from 'eslint-plugin-react/lib/util/error'
 
 const Forms = () => {
   const { artist } = usePage<{ artist: Artist }>().props

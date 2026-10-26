@@ -8,7 +8,7 @@ export const createAlbum = vine.create({
     .regex(/^(?:https?:\/\/)?(?:www\.)?deezer\.com\/(?:[a-z]{2}\/)?album\/\d+\/?$/)
     .nullable(),
   image: vine.file({
-    size: '8G',
+    size: '8gb',
     extnames: ['jpeg', 'jpg', 'png', 'webp'],
   }),
   name: vine.string().maxLength(255),

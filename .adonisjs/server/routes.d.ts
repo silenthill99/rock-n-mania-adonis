@@ -19,6 +19,7 @@ export type ScannedRoutes = {
     'clips.delete': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
     'albums.create': { paramsTuple?: []; params?: {} }
     'albums.store': { paramsTuple?: []; params?: {} }
+    'albums.index': { paramsTuple?: []; params?: {} }
     'artists.create': { paramsTuple?: []; params?: {} }
     'artists.store': { paramsTuple?: []; params?: {} }
     'artists.edit': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
@@ -33,6 +34,7 @@ export type ScannedRoutes = {
     'clips.create': { paramsTuple?: []; params?: {} }
     'clips.edit': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
     'albums.create': { paramsTuple?: []; params?: {} }
+    'albums.index': { paramsTuple?: []; params?: {} }
     'artists.create': { paramsTuple?: []; params?: {} }
     'artists.edit': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
   }
@@ -45,6 +47,7 @@ export type ScannedRoutes = {
     'clips.create': { paramsTuple?: []; params?: {} }
     'clips.edit': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
     'albums.create': { paramsTuple?: []; params?: {} }
+    'albums.index': { paramsTuple?: []; params?: {} }
     'artists.create': { paramsTuple?: []; params?: {} }
     'artists.edit': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
   }
