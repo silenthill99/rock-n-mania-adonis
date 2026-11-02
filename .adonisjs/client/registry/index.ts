@@ -126,6 +126,12 @@ const routes = {
     tokens: [{"old":"/artist/:id","type":0,"val":"artist","end":""},{"old":"/artist/:id","type":1,"val":"id","end":""}],
     types: placeholder as Registry['artists.update']['types'],
   },
+  'artists.index': {
+    methods: ["GET","HEAD"],
+    pattern: '/artists',
+    tokens: [{"old":"/artists","type":0,"val":"artists","end":""}],
+    types: placeholder as Registry['artists.index']['types'],
+  },
 } as const satisfies Record<string, AdonisEndpoint>
 
 export { routes }

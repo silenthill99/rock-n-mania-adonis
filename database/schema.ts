@@ -17,18 +17,7 @@ export class AlbumArtistSchema extends BaseModel {
 }
 
 export class AlbumSchema extends BaseModel {
-  static $columns = [
-    'createdAt',
-    'deezerUrl',
-    'id',
-    'imagePath',
-    'name',
-    'releasedAt',
-    'slug',
-    'trackList',
-    'updatedAt',
-    'userId',
-  ] as const
+  static $columns = ['createdAt', 'deezerUrl', 'id', 'imagePath', 'name', 'releasedAt', 'slug', 'tracklist', 'updatedAt', 'userId'] as const
   $columns = AlbumSchema.$columns
   @column.dateTime({ autoCreate: true })
   declare createdAt: DateTime | null
@@ -45,7 +34,7 @@ export class AlbumSchema extends BaseModel {
   @column()
   declare slug: string
   @column()
-  declare trackList: string
+  declare tracklist: string
   @column.dateTime({ autoCreate: true, autoUpdate: true })
   declare updatedAt: DateTime | null
   @column()
@@ -53,22 +42,7 @@ export class AlbumSchema extends BaseModel {
 }
 
 export class ArtistSchema extends BaseModel {
-  static $columns = [
-    'city',
-    'country',
-    'createdAt',
-    'endedAt',
-    'id',
-    'imagePath',
-    'logoPath',
-    'name',
-    'shortBiography',
-    'slug',
-    'startedAt',
-    'type',
-    'updatedAt',
-    'websiteUrl',
-  ] as const
+  static $columns = ['city', 'country', 'createdAt', 'endedAt', 'id', 'imagePath', 'logoPath', 'name', 'shortBiography', 'slug', 'startedAt', 'type', 'updatedAt', 'websiteUrl'] as const
   $columns = ArtistSchema.$columns
   @column()
   declare city: string

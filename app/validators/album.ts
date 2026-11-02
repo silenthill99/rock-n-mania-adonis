@@ -13,5 +13,5 @@ export const createAlbum = vine.create({
   }),
   name: vine.string().maxLength(255),
   released_at: vine.date(),
-  trackList: vine.string(),
+  tracklist: vine.string(),
 })

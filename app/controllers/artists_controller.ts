@@ -15,6 +15,13 @@ export default class ArtistsController {
     })
   }
 
+  async index({ inertia }: HttpContext) {
+    const artists = await Artist.all()
+    return inertia.render('artists/index', {
+      artists: ArtistTransformer.transform(artists),
+    })
+  }
+
   async store({ request, response }: HttpContext) {
     const {
       city,

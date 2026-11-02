@@ -1,0 +1,28 @@
+--- a/node_modules/@poppinss/multiparty/index.js
++++ b/node_modules/@poppinss/multiparty/index.js
+@@ -755,15 +755,17 @@
+     self.handleError(err);
+   });
+   fieldStream.on('readable', function() {
+-    var buffer = fieldStream.read();
+-    if (!buffer) return;
+-
+-    self.totalFieldSize += buffer.length;
+-    if (self.totalFieldSize > self.maxFieldsSize) {
+-      self.handleError(createError(413, 'maxFieldsSize ' + self.maxFieldsSize + ' exceeded'));
+-      return;
++    // Loop until drained: a single read() can leave a chunk unread when a
++    // field's value contains a CRLF, which stalls 'end' and hangs the parser.
++    var buffer;
++    while ((buffer = fieldStream.read()) !== null) {
++      self.totalFieldSize += buffer.length;
++      if (self.totalFieldSize > self.maxFieldsSize) {
++        self.handleError(createError(413, 'maxFieldsSize ' + self.maxFieldsSize + ' exceeded'));
++        return;
++      }
++      value += decoder.write(buffer);
+     }
+-    value += decoder.write(buffer);
+   });
+ 
+   fieldStream.on('end', function() {

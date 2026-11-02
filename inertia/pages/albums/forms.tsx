@@ -22,7 +22,7 @@ const Forms = () => {
       <h1>{active ? `Editer l'album ${album.name}` : 'Ajouter un album'}</h1>
       <Form route={action}>
         {({ errors }) => (
-          <div className={"space-y-5"}>
+          <div className="space-y-5">
             <div>
               <label className="label" htmlFor="name">
                 Titre de l&#39;album
@@ -34,8 +34,8 @@ const Forms = () => {
               <label className="label" htmlFor="trackList">
                 Liste des titres
               </label>
-              <textarea className="textarea text-black w-full" id="trackList" name="trackList" />
-              {errors.trackList && <p className="text-error">{errors.trackList}</p>}
+              <textarea className="textarea text-black w-full" id="trackList" name="tracklist" />
+              {errors.tracklist && <p className="text-error">{errors.tracklist}</p>}
             </div>
             <div>
               <label htmlFor="releasedAt" className="label">
@@ -62,7 +62,7 @@ const Forms = () => {
                 onChange={handleChange}
               />
               {errors.image && <p className="text-error">{errors.image}</p>}
-              {visual && <img src={visual} alt="Visuel" width={200}/>}
+              {visual && <img src={visual} alt="Visuel" width={200} />}
             </div>
             <div>
               <label htmlFor="deezer_url" className="label">

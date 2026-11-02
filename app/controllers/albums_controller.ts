@@ -32,7 +32,7 @@ export default class AlbumsController {
       image,
       name,
       released_at: releasedAt,
-      trackList,
+      tracklist,
     } = await request.validateUsing(createAlbum)
     const slug = string.slug(name)
 
@@ -45,7 +45,7 @@ export default class AlbumsController {
         deezerUrl,
         name,
         releasedAt,
-        trackList,
+        tracklist,
         slug,
         imagePath: `/images/albums/${imageName}`,
       })

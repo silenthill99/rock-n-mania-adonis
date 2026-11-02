@@ -3,6 +3,16 @@ import type Album from '#models/album'
 
 export default class AlbumTransformer extends BaseTransformer<Album> {
   toObject() {
-    return this.pick(this.resource, ['id'])
+    return this.pick(this.resource, [
+      'id',
+      'name',
+      'tracklist',
+      'releasedAt',
+      'slug',
+      'imagePath',
+      'deezerUrl',
+      'createdAt',
+      'updatedAt',
+    ])
   }
 }

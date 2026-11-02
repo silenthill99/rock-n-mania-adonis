@@ -31,5 +31,6 @@ export interface ApiDefinition {
     store: typeof routes['artists.store']
     edit: typeof routes['artists.edit']
     update: typeof routes['artists.update']
+    index: typeof routes['artists.index']
   }
 }
